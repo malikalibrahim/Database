@@ -7,29 +7,54 @@
 <body>
     <?php
 
+/* Deel 1*/
+
 for ($i = 0; $i <= 50; $i++) {
+    echo $i . "<br>";
 }
-$klas = ["malii", "malik", "malio", "maliou", "malpoi", "meroi", "msdrio", "merios","msdrixo", "meriogs"];
-echo '<br>'. $klas[0]. '</br>';
-echo '<br>'. $klas[1]. '</br>';
-echo '<br>'. $klas[2]. '</br>';
-echo '<br>'. $klas[3]. '</br>';
-echo '<br>'. $klas[4]. '</br>';
-echo '<br>'. $klas[5]. '</br>';
-echo '<br>'. $klas[6]. '</br>';
-echo '<br>'. $klas[7]. '</br>';
-echo '<br>'. $klas[8]. '</br>';
-echo '<br>'. $klas[9]. '</br>';
 
-$maanden = ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December']; 
 
-$lengte = count($maanden);
-for ($i = 0; $i < $lengte; $i++) {
-    echo '<br>'. $maanden[$i]. '</br>';
+
+
+
+/* Deel 2*/
+
+$klasgenoten = [
+    "Jan",
+    "Piet",
+    "Klaas",
+    "Marie",
+    "Emma",
+    "Sara",
+    "Tom",
+    "Lisa",
+    "Bas",
+    "Linda"
+];
+
+foreach ($klasgenoten as $naam) {
+    echo $naam . "<br>";
 }
+
+/* Deel 3*/
+
+$maanden = ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'];
+
+for ($i = 3; $i <= 14; $i++) {
+    echo 'Maand ' . ($i + 1) . ' is ' . $maanden[$i] . '.<br />';
+}
+
+/* Deel 4*/
+$maanden = ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'];
+
 foreach ($maanden as $maanden) {
-echo $klas;
+    if ($maanden >= 3 && $maanden <= 14) {
+        echo 'Maand ' . ($maanden+ 1) . ' is ' . $maand . '.<br />';
+    }
 }
+
+
+
 ?>
 </body>
 </html>
