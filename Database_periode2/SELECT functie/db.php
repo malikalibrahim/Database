@@ -6,7 +6,6 @@ class Database {
         try {
             $this->pdo = new PDO("mysql:host=$host; dbname=$db", $user, $pass);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "connected to database $db";
         } catch (PDOException $e) {
             echo "Connection faild: " . $e->getMessage();
         }
@@ -26,10 +25,9 @@ class Database {
             $result = $stmt->fetchAll();
             return $result;
         } else {
-            $sql = "SELECT * FROM user WHERE id = :id";
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->execute(['id' => $id]);	
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $stmt = $this->pdo->prepare("SELECT * FROM user WHERE id = ?");
+            $stmt->execute([$id]);	
+            $result = $stmt->fetch();
             return $result;
         }
     }

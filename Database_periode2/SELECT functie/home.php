@@ -4,13 +4,12 @@ include "db.php";
 $pdo = new Database();
 
 try{
-   
-    $hello = $pdo->selectUser();
-    foreach ($hello as $user) {
-        echo $user["id"] . "<br>";
-        echo $user["naam"] . "<br>";
-        echo $user["password"] . "<br>";
-    }
+
+    $hello = $pdo->selectUser(2);
+        echo $hello["id"] . "<br>";
+        echo $hello["naam"] . "<br>";
+        echo $hello["password"] . "<br>";
+    
 
 
 } catch (PDOException $e){
