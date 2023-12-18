@@ -19,20 +19,15 @@ class Database {
 
     }
 
-    public function selectUser($id = null) {
-        if (!$id) {
-            $stmt = $this->pdo->query("SELECT * FROM user");
-            $result = $stmt->fetchAll();
-            return $result;
-        } else {
+    public function login($id = null) {
+     
             $stmt = $this->pdo->prepare("SELECT * FROM user WHERE id = ?");
             $stmt->execute([$id]);	
             $result = $stmt->fetch();
             return $result;
         }
     }
-    
-}
+
 ?>
  
  
